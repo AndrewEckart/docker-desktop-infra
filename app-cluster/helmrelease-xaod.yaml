@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: xaod
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: servicex
+      sourceRef:
+        kind: HelmRepository
+        name: ssl-hep
+  interval: 5m0s
+  releaseName: xaod
+  targetNamespace: default
+
